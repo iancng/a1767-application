@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script>
+	$(document).ready(function(){
+		$("#calculationForm").submit(function(e) {
+            e.preventDefault();
+            var form = $(this);
+            var url = form.attr('action');
+            e.preventDefault();
+            $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(),
+            success: function(data)
+            {	
+                var res = JSON.parse(data);
+                console.log(res);
+                $("#V1n").val(res.V1n);
+                $("#V1t").val(res.V1t);
+                $("#W1").val(res.W1);
+                $("#V2n").val(res.V2n);
+                $("#V2t").val(res.V2t);
+                $("#W2").val(res.W2);
+            }
+            });
+        });
+    });
+    </script>
+    </head>
+	<body>
+        <h1>Calculation App</h1>
+        <form action="/post" method="POST" id="calculationForm">
+        <div>
+            <label for="">m1</label>
+            <input type="text" name="m1" value="1110">
+        </div>
+        <div>
+            <label for="">m2</label>
+            <input type="text" name="m2" value="1935">
+        </div>
+        <div>
+            <label for="">a1</label>
+            <input type="text" name="a1" value="1.086">
+        </div>
+        <div>
+            <label for="">a2</label>
+            <input type="text" name="a2" value="-1.061">
+        </div>
+        <div>
+            <label for="">b1</label>
+            <input type="text" name="b1" value="0.8475">
+        </div>
+        <div>
+            <label for="">b2</label>
+            <input type="text" name="b2" value="-2.259">
+        </div>
+        <div>
+            <label for="">J1</label>
+            <input type="text" name="J1" value="1921.431">
+        </div>
+        <div>
+            <label for="">J2</label>
+            <input type="text" name="J2" value="4017.713">
+        </div>
+        <div>
+            <label for="">En</label>
+            <input type="text" name="En" value="0.386306">
+        </div>
+        <div>
+            <label for="">Et</label>
+            <input type="text" name="Et" value="0.386306">
+        </div>
+        <div>
+            <label for="">V20n</label>
+            <input type="text" name="V20n" value="1.97">
+        </div>
+        <div>
+            <label for="">V20t</label>
+            <input type="text" name="V20t" value="1.97">
+        </div>
+        <div>
+            <label for="">w10</label>
+            <input type="text" name="w10" value="0">
+        </div>
+        <div>
+            <label for="">w20</label>
+            <input type="text" name="w20" value="0">
+        </div>
+        <div>
+            <label for="">V10n</label>
+            <input type="text" name="V10n" value="0">
+        </div>
+        <div>
+            <label for="">V10t</label>
+            <input type="text" name="V10t" value="8.3">
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+			<div id="res">
+			</div>
+        <div>
+            <label for="">V1n</label>
+            <input type="text" id="V1n">
+        </div>
+        <div>
+            <label for="">V1t</label>
+            <input type="text" id="V1t">
+        </div>
+        <div>
+            <label for="">W1</label>
+            <input type="text" id="W1">
+        </div>
+        <div>
+            <label for="">V2n</label>
+            <input type="text" id="V2n">
+        </div>
+        <div>
+            <label for="">V2t</label>
+            <input type="text" id="V2t">
+        </div>
+        <div>
+            <label for="">W2</label>
+            <input type="text" id="W2">
+        </div>
+    </body>
+</html>
