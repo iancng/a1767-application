@@ -12,7 +12,6 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '/index.html'));
 });
   
-  
 app.post('/post', function(req, res) {
   let m1 =   parseFloat(req.body.m1); //C2
   let m2 = parseFloat(req.body.m2); //C3

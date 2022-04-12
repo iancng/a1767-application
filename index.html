@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>2D Force Recon</title>
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	<script>
 	$(document).ready(function(){
@@ -34,47 +34,47 @@
     </script>
     </head>
 	<body>
-        <h1>Calculation App</h1>
+        <h1>2D Force Recon</h1>
         <form action="/post" method="POST" id="calculationForm">
         <div>
             <label for="">m1</label>
-            <input type="text" name="m1">
+            <input type="text" name="m1"><span>kg</span>
         </div>
         <div>
             <label for="">m2</label>
-            <input type="text" name="m2">
+            <input type="text" name="m2"><span>kg</span>
         </div>
         <div>
             <label for="">a1</label>
-            <input type="text" name="a1">
+            <input type="text" name="a1"><span>m</span>
         </div>
         <div>
             <label for="">a2</label>
-            <input type="text" name="a2">
+            <input type="text" name="a2"><span>m</span>
         </div>
         <div>
             <label for="">b1</label>
-            <input type="text" name="b1">
+            <input type="text" name="b1"><span>m</span>
         </div>
         <div>
             <label for="">b2</label>
-            <input type="text" name="b2">
+            <input type="text" name="b2"><span>m</span>
         </div>
         <div>
             <label for="">J1</label>
-            <input type="text" name="J1">
+            <input type="text" name="J1"><span>kgm² - Moment of Inertia  V1</span>
         </div>
         <div>
             <label for="">J2</label>
-            <input type="text" name="J2">
+            <input type="text" name="J2"><span>kgm² - Moment of Inertia V2</span>
         </div>
         <div>
             <label for="">En</label>
-            <input type="text" name="En">
+            <input type="text" name="En"><span>Coefficient of Restitution n Direction</span>
         </div>
         <div>
             <label for="">Et</label>
-            <input type="text" name="Et">
+            <input type="text" name="Et"> <span> Coefficient of Restitution t Direction</span>
         </div>
         <div>
             <label for="">V20n</label>
